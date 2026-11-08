@@ -43,12 +43,6 @@ jupyter lab
 
 **Pushing for the first time:** GitHub doesn't accept your account password over HTTPS. The easiest fix is to install the [GitHub CLI](https://cli.github.com/) and run `gh auth login` once, or use GitHub Desktop.
 
-**Optional shortcut (macOS/Linux):** add this to `~/.bashrc` (or `~/.zshrc` on a Mac), with your own path, and then just type `final` to jump in with the venv active:
-
-```bash
-alias final='cd ~/path/to/ml-final-proj && source .venv/bin/activate'
-```
-
 ## Everyday workflow
 
 ```bash

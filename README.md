@@ -13,6 +13,9 @@
 5. [PhiUSIIL Phishing URL (UCI)](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset)
 6. [Endometriosis Dataset with 10k instances](https://www.kaggle.com/datasets/michaelanietie/endometriosis-dataset/data)
 
+### Project Proposal Document
+[Machine Learning Final Project Proposal Google Doc - View Only](https://docs.google.com/document/d/1s15pZi5cLb2GOl4LVGZxnm_1rtAuXFJo37_QhaX5ygs/edit?usp=sharing)
+
 ## Setup
 
 Python 3.12 or newer (`python3 --version`; get it from [python.org](https://www.python.org/downloads/) if it's older), git, and the accepted GitHub invite to this repo.
@@ -42,12 +45,6 @@ jupyter lab
 ```
 
 **Pushing for the first time:** GitHub doesn't accept your account password over HTTPS. The easiest fix is to install the [GitHub CLI](https://cli.github.com/) and run `gh auth login` once, or use GitHub Desktop.
-
-**Optional shortcut (macOS/Linux):** add this to `~/.bashrc` (or `~/.zshrc` on a Mac), with your own path, and then just type `final` to jump in with the venv active:
-
-```bash
-alias final='cd ~/path/to/ml-final-proj && source .venv/bin/activate'
-```
 
 ## Everyday workflow
 

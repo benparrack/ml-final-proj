@@ -1,67 +1,31 @@
-# Machine Learning Final Project
+# How much value does a used car keep?
 
-### Group Members:
-- Claire Carroll
-- Ben Parrack
-- Caitlin Brogden
+Machine Learning final project, DIS Stockholm, Fall 2026: Claire Carroll, Ben Parrack, Caitlin Brogden.
 
-## Dataset Brainstorming:
-1. [Cyber Attack Detection & Risk Prediction Dataset with 100k+ instances](https://www.kaggle.com/datasets/aiexplorer77/cyber-attack-detection-and-risk-prediction-dataset)
-2. [Phishing URL Detection with 111K URLs, 22 Features](https://www.kaggle.com/datasets/sahandnamvar/phishing-url-detection-111k-urls-22-features)
-3. [NFL Injury Reports Dataset (2009–2025) with 90k instances](https://www.kaggle.com/datasets/mansiaggarwal88/nfl-injury-reports-dataset-20092025)
-4. [FAA Wildlife Strike Database](https://wildlife.faa.gov/home)
-5. [PhiUSIIL Phishing URL (UCI)](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset)
-6. [Endometriosis Dataset with 10k instances](https://www.kaggle.com/datasets/michaelanietie/endometriosis-dataset/data)
+We predict a used car's **value retention ratio**: its advertised price divided by the entry-level new price of the same model in the year it was registered. It's a regression problem on 223,216 UK used-car adverts from the [DVM-CAR dataset](https://deepvisualmarketing.github.io/) (Huang et al., 2022).
 
-### Project Proposal Document
-[Machine Learning Final Project Proposal Google Doc - View Only](https://docs.google.com/document/d/1s15pZi5cLb2GOl4LVGZxnm_1rtAuXFJo37_QhaX5ygs/edit?usp=sharing)
+Proposal: [Google Doc (view only)](https://docs.google.com/document/d/1s15pZi5cLb2GOl4LVGZxnm_1rtAuXFJo37_QhaX5ygs/edit?usp=sharing)
 
 ## Setup
 
-Python 3.12 or newer (`python3 --version`; get it from [python.org](https://www.python.org/downloads/) if it's older), git, and the accepted GitHub invite to this repo.
-
-### macOS / Linux
+You need Python 3.12+.
 
 ```bash
 git clone https://github.com/benparrack/ml-final-proj.git
 cd ml-final-proj
-python3 -m venv .venv                 # creates the project's virtual environment
-source .venv/bin/activate             # your prompt now starts with (.venv)
-pip install -r requirements.txt       # installs Jupyter, pandas, scikit-learn, etc.
-nbstripout --install                  # strips notebook outputs on commit (prevents merge conflicts)
-jupyter lab                           # opens in your browser
-```
-
-### Windows (PowerShell)
-
-```powershell
-git clone https://github.com/benparrack/ml-final-proj.git
-cd ml-final-proj
-py -3.12 -m venv .venv
-.venv\Scripts\Activate.ps1            # if blocked, run once: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+python3 -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-nbstripout --install
-jupyter lab
 ```
 
-**Pushing for the first time:** GitHub doesn't accept your account password over HTTPS. The easiest fix is to install the [GitHub CLI](https://cli.github.com/) and run `gh auth login` once, or use GitHub Desktop.
+## Data
 
-## Everyday workflow
+The data isn't in the repo. Download the tables from [figshare](https://figshare.com/articles/figure/DVM-CAR_Dataset/19586296/2) and put the CSVs in a `data/` folder at the top of the repo. The notebook needs `Ad_table (extra).csv` and `Price_table.csv`.
+
+## Run
 
 ```bash
-cd ml-final-proj
-source .venv/bin/activate             # Windows: .venv\Scripts\Activate.ps1
-git pull                              # ALWAYS pull before you start
-pip install -r requirements.txt       # only needed if requirements.txt changed
 jupyter lab
-# ...work, save...
-git add <files you changed>
-git commit -m "Short description of what you did"
-git push
 ```
 
-**Ground rules to avoid merge conflicts:**
-- One notebook per person (e.g. `notebooks/01_eda.ipynb`, `notebooks/02_baseline.ipynb`). Don't edit someone else's notebook without telling them first.
-- Put code that several notebooks share in `.py` files under `src/`. Those merge cleanly.
-- Added a package? Run `pip install <package>`, then `pip freeze > requirements.txt`, then commit `requirements.txt` and tell the group.
-- Notebook outputs (plots, tables) are stripped on commit, so re-run a notebook after pulling to see its results.
+Open `notebooks/Proposal.ipynb` and run all cells. It checks and cleans the data, builds the target, and saves the result as `data/cars_joined.csv`.

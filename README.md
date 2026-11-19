@@ -28,4 +28,21 @@ The data isn't in the repo. Download the tables from [figshare](https://figshare
 jupyter lab
 ```
 
+## Edits
+
+In .venv terminal
+
+To stage commits (add changes files), type 
+```bash
+git pull
+git switch -c my-branch-name
+git add -A
+git commit -m "Commit name"
+git push -u origin my-branch-name
+```
+
+Explanation: For all new changes, to avoid merge issues we create a new branch, you create the name taking the place of my-branch-name, and push your changes to there. From this branch, on github you create a merge request and review it to see if their are any merge issues and we can troubleshoot or merge from there
+
+
+
 Open `notebooks/Proposal.ipynb` and run all cells. It checks and cleans the data, builds the target, and saves the result as `data/cars_joined.csv`.

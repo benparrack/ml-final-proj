@@ -34,11 +34,12 @@ In .venv terminal
 
 To stage commits (add changes files), type 
 ```bash
-git pull
-git switch -c my-branch-name
+git status                          # check what changed before you commit
+git switch -c fix-data-paths        # new branch (your uncommitted changes come with you)
 git add -A
-git commit -m "Commit name"
-git push -u origin my-branch-name
+git commit -m "Fix data paths so the notebook runs from notebooks/"
+git pull origin main                # bring in teammates' latest main (needs `origin main` on a new branch)
+git push -u origin fix-data-paths   # create the branch on GitHub
 ```
 
 Explanation: For all new changes, to avoid merge issues we create a new branch, you create the name taking the place of my-branch-name, and push your changes to there. From this branch, on github you create a merge request and review it to see if their are any merge issues and we can troubleshoot or merge from there

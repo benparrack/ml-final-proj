@@ -35,14 +35,49 @@ In .venv terminal
 To stage commits (add changes files), type 
 ```bash
 git status                          # check what changed before you commit
-git switch -c fix-data-paths        # new branch (your uncommitted changes come with you)
-git add -A
+git switch -c Branch name       # new branch (your uncommitted changes come with you)
+git add -A // or git add (filepath of changes you want to add)
 git commit -m "Fix data paths so the notebook runs from notebooks/"
 git pull origin main                # bring in teammates' latest main (needs `origin main` on a new branch)
-git push -u origin fix-data-paths   # create the branch on GitHub
+git push -u origin Branch name   # create the branch on GitHub
 ```
 
 Explanation: For all new changes, to avoid merge issues we create a new branch, you create the name taking the place of my-branch-name, and push your changes to there. From this branch, on github you create a merge request and review it to see if their are any merge issues and we can troubleshoot or merge from there
+
+## Future changes
+
+Clearly defined the problem (classification, regression, clustering, forecasting, etc.)
+- [x] Specified the target variable
+- [ ] Identified key evaluation metrics (accuracy, F1, ROC-AUC, MSE, MAE, etc.)
+- [ ] Described the success criteria and what “good performance” means
+- [x] Outlined assumptions and constraints (data limits, cost, fairness, real-time needs)
+- [x] Found relevant literature on similar datasets and explored the approach
+- [x] Discovered a novel approach to the dataset / problem
+
+Explored the dataset (shape, types, distributions)
+- [x] Identified data quality issues
+- [ ] Examined class balance and apply techniques as needed (SMOTE, class weights etc)
+- [ ] Investigated feature correlations or interactions
+- [ ] Visualized your data appropriately (histograms, boxplots, heatmaps, etc.)
+- [ ] Handle missing values, outliers, and noise
+- [ ] Standardisation of numerical features
+- [ ] Encoding categorical variables
+- [ ] Feature engineering / dimensionality reduction if needed
+- [ ] Time series-specific pre-processing (if applicable)
+- [ ] Image / text data processing (if applicable)
+
+Created train / test / validation splits
+- [ ] Implemented at least one simple baseline (mean predictor, logistic regression, etc.)
+- [ ] Compared performance of more complex models against the baseline
+- [ ] Tuned hyperparameters (GridSearch, RandomSearch)
+- [ ] Ensured reproducibility (random seeds, consistent preprocessing)
+- [ ] Evaluated using appropriate metrics for the task
+- [ ] Checked for overfitting/underfitting
+- [ ] Interpreted and visualised results (confusion matrix, ROC curves, feature importance, etc.)
+- [ ] Noted limitations and future improvements
+- [ ] Compared results to previous work / research / state-of-the-art
+
+
 
 
 
